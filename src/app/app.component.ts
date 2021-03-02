@@ -1,4 +1,3 @@
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
 import { WikipediaService } from './wikipedia.service';
 
@@ -13,7 +12,7 @@ export class AppComponent {
 
   onTerm(term: string) {
     this.wikipedia.search(term).subscribe({
-      next: (response: any) => (this.pages = response.query.search),
+      next: (pages) => (this.pages = pages),
     });
   }
 }
